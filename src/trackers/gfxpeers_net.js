@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name GFX Peers
-// @icon #d94605
+// @icon https://gfxpeers.net/favicon.ico
 // @trackerURL https://gfxpeers.net
 // @version 1.0
 // @connect *://gfxpeers.net
@@ -10,7 +10,7 @@
 const code = {
   "version": 3,
   "type": "kit",
-  "description": {"icon": "#d94605", "name": "GFX Peers", "version": "1.0"},
+  "description": {"icon": "https://gfxpeers.net/favicon.ico", "name": "GFX Peers", "version": "1.0"},
   "search": {
     "url": "https://gfxpeers.net/torrents.php?searchstr=%search%&order_by=time&order_way=desc&action=basic&searchsubmit=1",
     "method": "GET"
