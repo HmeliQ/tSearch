@@ -10,7 +10,7 @@
 const code = {
   "version": 3,
   "type": "kit",
-  "description": {"icon": "https://gfxpeers.net/favicon.ico", "name": "GFX Peers", "version": "1.0"},
+  "description": {"icon": "https://gfxpeers.net/favicon.ico", "name": "GFX Peers", "version": "1.02"},
   "search": {
     "url": "https://gfxpeers.net/torrents.php?searchstr=%search%&order_by=time&order_way=desc&action=basic&searchsubmit=1",
     "method": "GET"
