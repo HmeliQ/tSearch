@@ -92,6 +92,17 @@
           ]
         }
       ]
+    },
+    "downloadUrl": {
+      "selector": "td.big_info > div > span > a:eq(0)",
+      "pipeline": [
+        {
+          "name": "getAttr",
+          "args": [
+            "href"
+          ]
+        }
+      ]
     }
   }
 }
