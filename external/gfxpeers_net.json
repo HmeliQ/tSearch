@@ -4,7 +4,7 @@
   "description": {
     "icon": "https://gfxpeers.net/favicon.ico",
     "name": "GFX Peers",
-    "version": "1.0"
+    "version": "1.01"
   },
   "search": {
     "url": "https://gfxpeers.net/torrents.php?searchstr=%search%&order_by=time&order_way=desc&action=basic&searchsubmit=1",
