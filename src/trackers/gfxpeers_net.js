@@ -2,7 +2,7 @@
 // @name GFX Peers
 // @icon https://gfxpeers.net/favicon.ico
 // @trackerURL https://gfxpeers.net
-// @version 1.0
+// @version 1.02
 // @connect *://gfxpeers.net
 // @require exKit
 // ==/UserScript==
