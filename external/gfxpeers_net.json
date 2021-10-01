@@ -37,8 +37,7 @@ const code = {
       "selector": "td:eq(7)",
       "pipeline": [{"name": "getText"}, {"name": "toInt"}]
     },
-//    "date": {"selector": "td:eq(3)", "pipeline": [{"name": "getText"}]}
-        "date": {
+     "date": {
       "selector": "td:eq(3)>span",
       "pipeline": [
         {"name": "getAttr", "args": ["title"]},
