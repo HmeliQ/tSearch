@@ -37,7 +37,8 @@ const code = {
       "selector": "td:eq(7)",
       "pipeline": [{"name": "getText"}, {"name": "toInt"}]
     },
-     "date": {
+//    "date": {"selector": "td:eq(3)", "pipeline": [{"name": "getText"}]}
+        "date": {
       "selector": "td:eq(3)>span",
       "pipeline": [
         {"name": "getAttr", "args": ["title"]},
@@ -48,7 +49,11 @@ const code = {
         {"name": "legacyReplaceMonth"},
         {"name": "legacyParseDate", "args": ["1"]}
       ]
-    }
+    },
+        "downloadUrl": {
+     	 "selector": "td.big_info > div > span > a:eq(0)",
+     	 "pipeline": [{"name": "getAttr", "args": ["href"]}]
+    },a
   }
 };
 
