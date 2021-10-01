@@ -4,6 +4,7 @@
 // @trackerURL https://gfxpeers.net
 // @version 1.02
 // @connect *://gfxpeers.net
+// @downloadURL https://github.com/HmeliQ/tSearch/raw/master/src/trackers/nnmclub.js
 // @require exKit
 // ==/UserScript==
 
