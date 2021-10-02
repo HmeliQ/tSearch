@@ -2,16 +2,15 @@
 // @name GFX Peers
 // @icon https://gfxpeers.net/favicon.ico
 // @trackerURL https://gfxpeers.net
-// @version 1.02
+// @version 1.04
 // @connect *://gfxpeers.net
-// @downloadURL https://github.com/HmeliQ/tSearch/raw/master/src/trackers/gfxpeers_net.js
 // @require exKit
 // ==/UserScript==
 
 const code = {
   "version": 3,
   "type": "kit",
-  "description": {"icon": "https://gfxpeers.net/favicon.ico", "name": "GFX Peers", "version": "1.02"},
+  "description": {"icon": "https://gfxpeers.net/favicon.ico", "name": "GFX Peers", "version": "1.04"},
   "search": {
     "url": "https://gfxpeers.net/torrents.php?searchstr=%search%&order_by=time&order_way=desc&action=basic&searchsubmit=1",
     "method": "GET"
@@ -22,6 +21,22 @@ const code = {
       "selector": "tr.torrent > td.big_info > div > a",
       "pipeline": [{"name": "getText"}]
     },
+//     "categoryTitle": {
+//      "selector": "td.center.cats_col > a > div",
+//      "pipeline": [{"name": "getAttr", "args": ["title"]}]
+//    },
+        "categoryTitle": {
+            "selector": "td.center.cats_col > a > div",
+            "pipeline": [{"name": "getAttr", "args": ["class"]}],
+        },
+        "categoryUrl": {
+            "selector": "td.center.cats_col > a",
+            "pipeline": [{"name": "getProp", "args": ["href"]}]
+        },
+        "categoryId": {
+            "selector": "td.center.cats_col > a",
+            "pipeline": [{"name": "getProp", "args": ["href"]}]
+        },
     "url": {
       "selector": "tr.torrent > td.big_info > div > a",
       "pipeline": [{"name": "getProp", "args": ["href"]}]
@@ -38,7 +53,6 @@ const code = {
       "selector": "td:eq(7)",
       "pipeline": [{"name": "getText"}, {"name": "toInt"}]
     },
-//    "date": {"selector": "td:eq(3)", "pipeline": [{"name": "getText"}]}
         "date": {
       "selector": "td:eq(3)>span",
       "pipeline": [
@@ -54,8 +68,32 @@ const code = {
         "downloadUrl": {
      	 "selector": "td.big_info > div > span > a:eq(0)",
      	 "pipeline": [{"name": "getAttr", "args": ["href"]}]
-    },a
+    },
   }
 };
+/*
+code.flags = {
+    auth: 1,
+    language: 'en',
+    cyrillic: 1
+};
 
+code.categoryList = {
+  	applications: [1],
+  	plugins: [2],
+    tutorials: [3],
+    textures: [4],
+    3dmodels: [5],
+    gamedev: [6],
+    miscellaneous: [7]
+};
+
+code.hooks = {};
+
+code.hooks.transform = {};
+
+code.hooks.transform.categoryId = function (session, value) {
+    return exKit.funcList.idInCategoryListInt(code, value, /cat\[([0-9]+)/);
+};
+//*/
 API_exKit(code);
