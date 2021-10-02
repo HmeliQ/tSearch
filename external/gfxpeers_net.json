@@ -4,7 +4,7 @@
   "description": {
     "icon": "https://gfxpeers.net/favicon.ico",
     "name": "GFX Peers",
-    "version": "1.02"
+    "version": "1.04"
   },
   "search": {
     "url": "https://gfxpeers.net/torrents.php?searchstr=%search%&order_by=time&order_way=desc&action=basic&searchsubmit=1",
@@ -19,6 +19,39 @@
       "pipeline": [
         {
           "name": "getText"
+        }
+      ]
+    },
+    "categoryTitle": {
+      "selector": "td.center.cats_col > a > div",
+      "pipeline": [
+        {
+          "name": "getAttr",
+          "args": [
+            "class"
+          ]
+        }
+      ]
+    },
+    "categoryUrl": {
+      "selector": "td.center.cats_col > a",
+      "pipeline": [
+        {
+          "name": "getProp",
+          "args": [
+            "href"
+          ]
+        }
+      ]
+    },
+    "categoryId": {
+      "selector": "td.center.cats_col > a",
+      "pipeline": [
+        {
+          "name": "getProp",
+          "args": [
+            "href"
+          ]
         }
       ]
     },
